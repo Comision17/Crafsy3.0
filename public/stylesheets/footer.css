@@ -1,0 +1,91 @@
+footer{
+    padding: 20px 10px;
+    background-color: var(--Waldo);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+footer section{
+    width: 48%;
+}
+footer section.Empresa{
+    text-align: end
+}
+footer section.Copyrigth{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+footer section h2{
+    color: white;
+}
+footer section ul li{
+    margin: 10px 0;
+}
+footer section ul li.mapa{
+    display: none;
+}
+footer section ul li i{
+    margin-right: 5px;
+}
+footer section ul li a{
+    color: black;
+}
+footer section ul li a:hover{
+    color: var(--Jorge);
+}
+footer section form input{
+    width: 170px;
+    margin: 20px 0;
+    border: none;
+    padding: 2px;
+}
+footer section form button{
+    padding: 5px;
+    background-color: var(--Alfonzo);
+    color: white;
+    font-weight: 600;
+    border: none;
+    margin-left: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 160px;
+}
+
+@media (min-width:1024px) {
+    footer section{
+        font-size: 20px;
+    }
+    footer section.Redes{
+        width: 15%;
+    }
+    footer section.Empresa{
+        
+        display: flex;
+        width: 65%;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+    }
+    footer section.Empresa h2{
+        width: 100%;
+    }
+    footer section.Empresa .iframe{
+        width: 600px;
+    }
+    footer section.Empresa .extras{
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: center;
+        align-items: center;
+    }
+    footer section ul li.mapa{
+        display: block;
+    }
+    footer section ul li .direccion{
+        display: none;
+    }
+}

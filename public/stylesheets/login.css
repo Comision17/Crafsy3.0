@@ -1,0 +1,50 @@
+.login main{
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    color: var(--Jorge)
+}
+.login main h1{
+    text-align: center;
+}
+
+.login main .container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    font-weight: bold;
+}
+.login main .container label{
+    margin-bottom: 5px;
+}
+.login main .container input{
+    width: 100%;
+    padding: 10px;
+}
+.login main small{
+    margin-top: 5px;
+    color: var(--Alfonzo);
+}
+.login main button{
+    padding: 15px;
+    background-color: var(--Ruben);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 170px;
+}
+.login .bottom{
+    margin-bottom: 20px;
+}
+.login .recordarme{
+    text-align: end;
+}
+.login .error small{
+    font-size: 16px;
+    font-weight: bold;
+}

@@ -1,0 +1,205 @@
+.detail main .imagenes,
+.detail main .imagenes .img-principal,
+.detail main .imagenes .img-principal img,
+.detail main .imagenes .img-secundarias,
+.detail main .related img,
+.detail main .related{
+    width: 100%;
+}
+.detail main .imagenes .img-secundarias img{
+    width: 24%;
+}
+.detail main .related article{
+    width:48%;
+}
+.detail main .product-detail small{
+    font-size: 24px;
+    color: green;
+}
+.detail main .product-detail h2{
+    text-align: start;
+}
+.detail main .product-detail span{
+    font-size: 24px;
+    color: grey;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+.detail main .product-detail .precio{
+    font-size: 3rem;
+    color: var(--Alfonzo);
+    width: 100%;
+}
+
+.detail main .product-detail .sumar-carrito{
+    display: flex;
+}
+.detail main .product-detail .sumar-carrito input{
+    width: 50px;
+    border: none;
+}
+.detail main .product-detail .sumar-carrito div{
+    background-color: var(--Alfonzo);
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+.detail main .product-detail .bloque-completo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.detail main .product-detail .bloque-completo article{
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.detail main .product-detail .bloque-completo article.price{
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+}
+
+.detail main .product-detail aside{
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--Alfonzo);
+    color: white;
+}
+
+.detail main .product-detail aside h3{
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+}
+.detail main .product-detail aside article{
+    width: 30%;
+    text-align: center;
+}
+.detail main .product-detail aside article i{
+    color: black;
+}
+
+.detail main .product-detail button,
+.detail main .related article button{
+    border: none;
+    background-color: var(--Ruben);
+    height: 40px;
+    color: white;
+    border-radius: 8px;
+}
+
+.detail main .text-detail{
+    margin: 20px 0;
+    padding: 10px;
+}
+.detail main h2{
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.detail main .related{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.detail main .related h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.detail main .related article h4{
+    font-size: 18px;
+}
+.detail main .related article{
+    background-color: #ffffff90;
+    border-radius: 10px;
+    padding: 20px;
+    width: 205px;
+    height: 350px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.detail main .related article .related-img-0,
+.detail main .related article .related-img-1,
+.detail main .related article .related-img-2,
+.detail main .related article .related-img-3{
+    width: 95%;
+    margin: 0 auto;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.detail main .related article .related-img-1{
+    background-size: contain;
+    background-position: center;
+}
+
+.detail main .related article p{
+    width: 100%;
+    font-size: 20px;
+    color: var(--Alfonzo);
+    margin-bottom: 0;
+}
+.detail main .related article h4{
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+/* Tablet */
+@media (min-width:426px){
+    .detail main .related article{
+        width: 100%;
+        max-width:205px;
+    }
+}
+
+/* Desktop */
+@media (min-width:769px){
+    .detail main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .detail main .imagenes{
+        width: 40%;
+    }
+    .detail main .product-detail{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .detail main .related,
+    .detail main .text-detail{
+        width: 100%;
+    }
+
+    .detail main .related article{
+        width:100%;
+        max-width:205px;
+    }
+}

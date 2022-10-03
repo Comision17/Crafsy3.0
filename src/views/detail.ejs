@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('./partials/head',{title: 'Crafsy'}) %> 
+
+    <body class="detail">
+
+        <%- include('./partials/header') %> 
+
+        <main>
+            <section class="imagenes">
+                <div class="img-principal">
+                    <img id="imgMain" src="/images/productos/<%= producto.imagenes[0].nombre %>" alt="Imagen principal">
+                </div>
+                <div class="img-secundarias">
+                    <% producto.imagenes.forEach(img => { %>
+                        <img src="/images/productos/<%= img.nombre %>" alt="Imagen secundaria" onclick="document.getElementById('imgMain').setAttribute('src','/images/productos/<%= img.nombre %>')">
+                    <% }) %>
+                </div>
+            </section>
+            <section class="product-detail">
+                <h2><%= producto.marca.nombre %></h2>
+                <h1><%= producto.nombre %></h1>
+                <div class="bloque-completo">
+                    <article class="price">
+                        <% if (producto.descuento !== 0) { %>
+                            <small>%<%= producto.descuento %></small>
+                            <span>$<%= producto.precio %></span>
+                        <% } %>
+                        <p class="precio">$<%= producto.precio - (producto.precio * producto.descuento / 100)%></p>
+                    </article>  
+                    <article>
+                        <div class="sumar-carrito">
+                            <div class="restar">-</div>
+                            <input type="number">
+                            <div class="agregar">+</div>
+                        </div>
+                        <button>Comprar producto</button>
+                    </article>
+                </div>
+                <aside>
+                    <h3>Aprovecha las promociones</h3>
+                    <article>
+                        <p><i class="fas fa-truck"></i></p>
+                        <p>Envio gratis</p>
+                    </article>
+                    <article>
+                        <p><i class="fas fa-credit-card"></i></p>
+                        <p>14 cuotas sin interes</p>
+                    </article>
+                    <article>
+                        <p><i class="fas fa-user-tag"></i></p>
+                        <p>descuentos en tarjetas seleccionadas</p>
+                    </article>
+                </aside>
+            </section>
+            <section class="text-detail">
+                <h2>Detalle del producto</h2>
+                <p><%= producto.descripcion %></p>
+            </section>
+            <section class="related">
+                <h2>Productos relacionados</h2>
+                <% productos.forEach(producto => { %>
+                    <a href="/products/detail/<%= producto.id %>">
+                        <article>
+                            <div class="precioImg">
+                                <div class="related-img-0"  style="background-image:url('/images/productos/<%= producto.imagenes[0].nombre %>')"></div>
+                                <p>$<%= producto.precio %></p>
+                            </div>
+                            <h4><%= producto.nombre %></h4>
+                            <button>añadir al carrito</button>
+                        </article>
+                    </a>
+                <% }) %>
+            </section>
+        </main>
+        <%- include('./partials/footer') %> 
+    </body>
+</html>

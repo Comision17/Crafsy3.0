@@ -1,0 +1,17 @@
+.productos h1{
+    width: 100%;
+    text-align: center;
+}
+
+.productos .carrouselProductos{
+    width: 98%;
+    margin: 0 auto;
+}
+.productos .carrouselProductos .card{
+    width: 350px;
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

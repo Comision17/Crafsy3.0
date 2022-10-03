@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "alguien",
+        "email": "si@tenemosemail.com",
+        "pass": "tenemosunacontraseñasecreta",
+        "pais": "Argentina",
+        "genero": "M",
+        "image": "fotuli.jpg",
+        "rol": "admin"
+    },
+    {
+        "id": 2,
+        "name": "cristian",
+        "email": "cris@gmail.com",
+        "pass": "$2a$10$Q4zq5aCrPr/iXHk2GFkz2uhOQMtOuXJm7ADira4klRQ/oiyNEWtFK",
+        "pais": "argentina",
+        "genero": "M",
+        "image": "profile.png",
+        "rol": "usuario"
+    },
+    {
+        "id": 3,
+        "name": "El profe",
+        "email": "profe@gmail.com",
+        "pass": "$2a$10$Q4zq5aCrPr/iXHk2GFkz2uhOQMtOuXJm7ADira4klRQ/oiyNEWtFK",
+        "pais": "uruguay",
+        "genero": "M",
+        "image": "avatar-1661781316381.png",
+        "rol": "usuario"
+    },
+    {
+        "id": 4,
+        "name": "menganito",
+        "email": "tremendo@gmail.com",
+        "pass": "$2a$12$nKaChPNdblbNU4itaoN6xu9RmQG0Q5mkWL7/pJ6ptK/IukxxzbCNK",
+        "pais": "brasil",
+        "genero": "M",
+        "image": "avatar-1661781452319.png",
+        "rol": "usuario"
+    },
+    {
+        "id": 5,
+        "name": "Alcachofa",
+        "email": "alcachofa@gmail.com",
+        "pass": "$2a$12$qrl7eu2fQtHHhx5oLklpeu1HYSy3ksbjuB6osOZfnA.86QVCPlMBe",
+        "pais": "brasil",
+        "genero": "SN",
+        "image": "avatar-1662038672171.webp",
+        "rol": "admin"
+    }
+]

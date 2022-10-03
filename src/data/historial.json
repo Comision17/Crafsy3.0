@@ -1,0 +1,50 @@
+[
+    {
+        "id": 19,
+        "marca": "sobreescribir",
+        "titulo": "producto a sobreescribir",
+        "categoria": "Tablets",
+        "precio": 8520,
+        "descuento": 52,
+        "stock": 8516,
+        "descripcion": "jhgvsdjkhasgvdfkjashgdjahsdg a",
+        "imagenes": [
+            "img-1662039993608.webp",
+            "img-1662039993609.jpg",
+            "img-1662039993610.webp",
+            "img-1662039993611.webp"
+        ]
+    },
+    {
+        "id": 18,
+        "marca": "alguna",
+        "titulo": "Productazo",
+        "categoria": "Notebooks",
+        "precio": 2520000,
+        "descuento": 25,
+        "stock": 5646,
+        "descripcion": "Esto esta re bueno, veni a probarlo a nuestro local",
+        "imagenes": [
+            "img-1662039924527.jpg",
+            "img-1662039924527.jpg",
+            "img-1662039924528.png",
+            "img-1662039924533.jpg"
+        ]
+    },
+    {
+        "id": 19,
+        "marca": "sobreescribir",
+        "titulo": "producto a sobreescribir",
+        "categoria": "Tablets",
+        "precio": 8520,
+        "descuento": 52,
+        "stock": 8516,
+        "descripcion": "jhgvsdjkhasgvdfkjashgdjahsdg a",
+        "imagenes": [
+            "img-1662039993608.webp",
+            "img-1662039993609.jpg",
+            "img-1662039993610.webp",
+            "img-1662039993611.webp"
+        ]
+    }
+]

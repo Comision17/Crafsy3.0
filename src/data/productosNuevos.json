@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nombre": "Motorola Moto G30 6+128Gb",
+        "stock": 13,
+        "precio": 56000,
+        "descuento": 20,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "categoriasId": 1,
+        "marcasId": 9,
+        "createdAt": "2022-09-28T13:45:53.000Z",
+        "updatedAt": "2022-09-28T13:45:53.000Z",
+        "category": {
+            "id": 1,
+            "nombre": "Smartphones",
+            "createdAt": "2022-09-28T13:45:53.000Z",
+            "updatedAt": "2022-09-28T13:45:53.000Z"
+        },
+        "marca": {
+            "id": 9,
+            "nombre": "Motorola",
+            "createdAt": "2022-09-28T13:45:53.000Z",
+            "updatedAt": "2022-09-28T13:45:53.000Z"
+        },
+        "imagenes": [
+            {
+                "id": 1,
+                "nombre": "Moto g30.png",
+                "productosId": 1,
+                "createdAt": "2022-09-28T13:45:54.000Z",
+                "updatedAt": "2022-09-28T13:45:54.000Z"
+            },
+            {
+                "id": 2,
+                "nombre": "Moto g30 (2).png",
+                "productosId": 1,
+                "createdAt": "2022-09-28T13:45:54.000Z",
+                "updatedAt": "2022-09-28T13:45:54.000Z"
+            },
+            {
+                "id": 3,
+                "nombre": "Moto g30 (3).png",
+                "productosId": 1,
+                "createdAt": "2022-09-28T13:45:54.000Z",
+                "updatedAt": "2022-09-28T13:45:54.000Z"
+            },
+            {
+                "id": 4,
+                "nombre": "Moto g30 (4).png",
+                "productosId": 1,
+                "createdAt": "2022-09-28T13:45:54.000Z",
+                "updatedAt": "2022-09-28T13:45:54.000Z"
+            }
+        ]
+    }
+]

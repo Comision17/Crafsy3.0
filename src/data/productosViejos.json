@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "marca": "Motorola",
+        "titulo": "Celular Motorola Moto G52 6+128 Gb Black",
+        "categorias": "Smarphones",
+        "precio": 56000,
+        "descuento": 20,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 13,
+        "imagenes": [
+            "_0003_2020_Capri-_BasicPack_PhantomBlack_PDP-Hero.png",
+            "_0005_2020_Capri-_BasicPack_PhantomBlack_Front-View.png",
+            "_0000_2020_Capri-_BasicPack_PhantomBlack_Backside.png",
+            "168343-800-auto.png"
+        ]
+    },
+    {
+        "id": 3,
+        "marca": "Motorola",
+        "titulo": "Moto G100",
+        "categorias": "Smarphones",
+        "precio": 80000,
+        "descuento": 10,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 13,
+        "imagenes": [
+            "Moto-G100-pdp-kv-render-Iridescent-Sky-8g7y85otv.png",
+            "_0005_2020_Capri-_BasicPack_PhantomBlack_Front-View.png",
+            "_0000_2020_Capri-_BasicPack_PhantomBlack_Backside.png",
+            "169868-800-auto.png"
+        ]
+    },
+    {
+        "id": 6,
+        "marca": "Iphone",
+        "titulo": "Iphone 13 pro max plus extra super ultra violeta",
+        "categorias": "Smarphones",
+        "precio": 530000,
+        "descuento": 10,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 3,
+        "imagenes": [
+            "Moto-G100-pdp-kv-render-Iridescent-Sky-8g7y85otv.png",
+            "_0005_2020_Capri-_BasicPack_PhantomBlack_Front-View.png",
+            "_0000_2020_Capri-_BasicPack_PhantomBlack_Backside.png",
+            "169868-800-auto.png"
+        ]
+    },
+    {
+        "id": 7,
+        "marca": "Nokia",
+        "titulo": "Nokia 1100 un telefonazo y antirrobo",
+        "categorias": "Smarphones",
+        "precio": 20000,
+        "descuento": 40,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 50,
+        "imagenes": [
+            "Nokia 1100.jpg",
+            "Nokia 1100 caja.webp",
+            "Nokia 1100 extra.webp",
+            "Nokia 1100 negro.jpg"
+        ]
+    },
+    {
+        "id": 8,
+        "marca": "Asus",
+        "titulo": "NOTEBOOK GAMER ASUS FX506HCB-HN161T INTEL CORE I7  ",
+        "categorias": "Notebooks",
+        "precio": 329999,
+        "descuento": 10,
+        "stock": 3,
+        "descripcion": "Notebook de 15.6\" FHD (1920 x 1080) 144Hz. Procesador Intel Core i7-11600h (2.6 GHz hasta 4.6 GHz). Capacidad 512GB SSD M.2 NVMe PCIe 3.0. / RAM 16GB DDR4-3200 SO-DIMM. Placa de video NVIDIAGeForceRTX3050 Laptop GPU. Bateria 48WHrs, 3S1P, 3-cell Li-ion. Bluetooth 5.2 (dual band). Teclado numerico. USB 3.2 Gen 2 Type-C / USB 3.2 Gen 1 Type-A x3. Wi Fi 6 (802.11ax). HDMI 2.0. Camara frontal 720PHD. Sistema operativo Windows 10 home. Microfono incorporado.",
+        "imagenes": [
+            "default-image.png",
+            "default-image.png",
+            "default-image.png",
+            "default-image.png"
+        ]
+    },
+    {
+        "id": 9,
+        "marca": "Noblex",
+        "titulo": "Tablet Noblex Star Wars. Edición Limitada",
+        "categorias": "Tablets",
+        "precio": 15000,
+        "descuento": 0,
+        "stock": 1,
+        "descripcion": "Pantalla de 7\" multitouch de 5 puntos y resolución de IPS 1024 X 600.\r\n-Procesador Intel de cuatro núcleos.\r\n-Memoria interna de 16 GB expandible hasta 32 GB y micro USB.\r\n-Sistema operativo Android KitKat 4.4.\r\n-Conexión Wi-Fi, Bluetooth.\r\n-Cámara frontal de 0.3 Megapíxeles y una posterior de 2.0 Megapíxeles.",
+        "imagenes": [
+            "Tablet noblex 1.jfif",
+            "Tablet Noblex2.jfif",
+            "Tablet Noblex3.jpg",
+            "Tablet Noblex 4.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "marca": "Samsung",
+        "titulo": "Samsung Galaxy S21 Ultra",
+        "categorias": "Smarphones",
+        "precio": 220000,
+        "descuento": 20,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 13,
+        "imagenes": [
+            "164953-800-auto.png",
+            "164958-800-auto.png",
+            "169868-800-auto.png",
+            "163494-800-auto.png"
+        ]
+    }
+]

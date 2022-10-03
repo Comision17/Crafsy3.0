@@ -1,0 +1,258 @@
+[
+    {
+        "id": 1,
+        "marca": "Motorola",
+        "titulo": "Motorola Moto G30 6+128Gb",
+        "categoria": "Smartphones",
+        "precio": 56000,
+        "descuento": 20,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 13,
+        "imagenes": [
+            "Moto g30.png",
+            "Moto g30 (2).png",
+            "Moto g30 (3).png",
+            "Moto g30 (4).png"
+        ]
+    },
+    {
+        "id": 3,
+        "marca": "Motorola",
+        "titulo": "Motorola Moto G100",
+        "categoria": "Smartphones",
+        "precio": 80000,
+        "descuento": 10,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 13,
+        "imagenes": [
+            "Moto-G100 (2).png",
+            "Moto-G100.png",
+            "Moto-G100 (3).png",
+            "Moto-G100 (4).png"
+        ]
+    },
+    {
+        "id": 2,
+        "marca": "Samsung",
+        "titulo": "Samsung Galaxy S21 Ultra",
+        "categoria": "Smartphones",
+        "precio": 220000,
+        "descuento": 20,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 13,
+        "imagenes": [
+            "S21 Ultra1.png",
+            "S21 Ultra2.png",
+            "S21 Ultra4.png",
+            "S21 Ultra3.png"
+        ]
+    },
+    {
+        "id": 4,
+        "marca": "Samsung",
+        "titulo": "Samsung Galaxy A52",
+        "categoria": "Smartphones",
+        "precio": 71000,
+        "descuento": 10,
+        "descripcion": "Disfrutá de los detalles realmente vibrantes con la pantalla Super AMOLED Display FHD+ que alcanza los 800 nits para mayor claridad incluso con la luz de día brillante. Eye Comfort Shield reduce la luz azul y la pantalla extrafluida mantiene la vista relajada, ya sea que estés jugando o navegando.",
+        "stock": 10,
+        "imagenes": [
+            "A52.jpg",
+            "A52 3.webp",
+            "A52 2.webp",
+            "A52 4.webp"
+        ]
+    },
+    {
+        "id": 5,
+        "marca": "Apple",
+        "titulo": "Iphone 13 pro max plus extra ultra",
+        "categoria": "Smartphones",
+        "precio": 530000,
+        "descuento": 10,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 3,
+        "imagenes": [
+            "Iphone 13.webp",
+            "Iphone 13 2.webp",
+            "Iphone 13 3.webp",
+            "Iphone 13 4.webp"
+        ]
+    },
+    {
+        "id": 6,
+        "marca": "Apple",
+        "titulo": "Apple iPhone SE (3ª generación, 64 GB) - Azul medianoche",
+        "categoria": "Smartphones",
+        "precio": 169000,
+        "descuento": 5,
+        "descripcion": "Chip A15 Bionic superrápido. Una increíble duración de batería y una cámara que es una superestrella. Y además, el vidrio más resistente en un smartphone y botón de inicio con la seguridad de Touch ID.",
+        "stock": 15,
+        "imagenes": [
+            "iPhoneSE2022.jpg",
+            "iPhoneSE2022 2.jpg",
+            "iPhoneSE2022 3.jpg",
+            "iPhoneSE2022 4.jpg"
+        ]
+    },
+    {
+        "id": 7,
+        "marca": "Nokia",
+        "titulo": "Nokia 1100 un telefonazo y antirrobo",
+        "categoria": "Smartphones",
+        "precio": 20000,
+        "descuento": 40,
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum numquam, placeat eius perferendis aspernatur doloribus aliquid, quibusdam aperiam hic a tenetur! Quis rem aut qui expedita ut aspernatur nisi officiis.",
+        "stock": 50,
+        "imagenes": [
+            "Nokia 1100.jpg",
+            "Nokia 1100 caja.webp",
+            "Nokia 1100 extra.webp",
+            "Nokia 1100 negro.jpg"
+        ]
+    },
+    {
+        "id": 8,
+        "marca": "Xiaomi",
+        "titulo": "Xiaomi 12X",
+        "categoria": "Smartphones",
+        "precio": 190658,
+        "descuento": 20,
+        "stock": 8,
+        "descripcion": "El teléfono Xiaomi 12X 8GB/256GB 6.3 Dual Sim Smartphone nos presenta un modelo elegante con detalles refinados y cuidadosos en cada componente para ofrecer un tamaño perfecto que cabe en una mano, una pantalla con máximo realismo, sonido de alta calidad y un procesador potente para cualquier tipo de uso, aunque se destaca con los video juegos.",
+        "imagenes": [
+            "Xiaomi12.jpg",
+            "Xiaomi12(2).webp",
+            "Xiaomi12X.png",
+            "Xiaomi12.webp"
+        ]
+    },
+    {
+        "id": 9,
+        "marca": "Noblex",
+        "titulo": "Tablet Noblex Star Wars. Edición Limitada",
+        "categoria": "Tablets",
+        "precio": 15000,
+        "descuento": 0,
+        "stock": 1,
+        "descripcion": "Pantalla de 7\" multitouch de 5 puntos y resolución de IPS 1024 X 600.\r\n-Procesador Intel de cuatro núcleos.\r\n-Memoria interna de 16 GB expandible hasta 32 GB y micro USB.\r\n-Sistema operativo Android KitKat 4.4.\r\n-Conexión Wi-Fi, Bluetooth.\r\n-Cámara frontal de 0.3 Megapíxeles y una posterior de 2.0 Megapíxeles.",
+        "imagenes": [
+            "Tablet noblex 1.jfif",
+            "Tablet Noblex2.jfif",
+            "Tablet Noblex3.jpg",
+            "Tablet Noblex 4.jpg"
+        ]
+    },
+    {
+        "id": 10,
+        "marca": "Samsung",
+        "titulo": "Galaxy Tab S8 Ultra",
+        "categoria": "Tablets",
+        "precio": 275999,
+        "descuento": 0,
+        "stock": 8,
+        "descripcion": "Esta tablet Samsung es la compañera ideal, con capacidad de sobra para cada una de tus actividades. El diseño delgado, compacto y portátil, con facilidad para sostener en una mano, lo convierte en una combinación perfecta de rendimiento y versatilidad. Transferir, sincronizar y acceder a tus dispositivos las veces que quieras ahora es posible. Sus conexiones usb 3.2 gen 1, wi-fi direct, smart switch, wi-fi, bluetooth, mimo te permiten potenciar sus funciones al máximo",
+        "imagenes": [
+            "Galaxy Tab S8(2).webp",
+            "Galaxy Tab S8(3).webp",
+            "Galaxy Tab S8(4).webp",
+            "Galaxy Tab S8(5).webp"
+        ]
+    },
+    {
+        "id": 11,
+        "marca": "Xiaomi",
+        "titulo": "Tablet Xiaomi Mi Pad 5",
+        "categoria": "Tablets",
+        "precio": 15000,
+        "descuento": 0,
+        "stock": 1,
+        "descripcion": "Mejora tu experiencia de trabajo y entretenimiento. La gran pantalla de 11, el diseño compacto y elegante y la configuración de gama alta cumplirán con creces tus expectativas en multitud de situaciones. La  Xiaomi Pad 5 está equipada con Qualcomm® Snapdragon™ 860 con una pantalla con una tasa de refresco Superfluida de 120 Hz que harán que disfrutes de una experiencia impresionante. Con la batería enorme de 8720 mAh (typ), no te preocuparás más por la carga.",
+        "imagenes": [
+            "tablet-xiaomi-pad-5-6gb-ram-128gb-rom.jpg",
+            "tablet-xiaomi-pad-5-6gb-ram-128gb-rom (1).jpg",
+            "tablet-xiaomi-pad-5-6gb-ram-128gb-rom (2).jpg",
+            "tablet-xiaomi-pad-5-6gb-ram-128gb-rom (3).jpg"
+        ]
+    },
+    {
+        "id": 12,
+        "marca": "Apple",
+        "titulo": "iPad Pro 12,9 (5a generación,2TB,M1) Gris espacial",
+        "categoria": "Tablets",
+        "precio": 589000,
+        "descuento": 30,
+        "stock": 15,
+        "descripcion": "El iPad Pro con el chip M1 de Apple tiene un rendimiento fuera de serie y una batería que te acompaña todo el día. La impresionante pantalla Liquid Retina XDR de 12,9 pulgadas es perfecta para ver y editar fotos y videos HDR.1 Los modelos con conexión celular te permiten conectarte en lugares donde no hay Wi-Fi. La cámara frontal con Encuadre Centrado te mantendrá automáticamente en el centro de la imagen durante las videollamadas. Y eso no es todo. Viene con cámaras Pro y un escáner LiDAR para que hagas fotos y videos increíbles y disfrutes de experiencias de realidad aumentada realmente envolventes. Con el puerto Thunderbolt podrás conectar accesorios de alto rendimiento. Y si le sumas el Apple Pencil, podrás tomar apuntes, dibujar y hacer anotaciones, y con el Magic Keyboard con trackpad integrado podrás escribir con total comodidad. El iPad Pro está listo para todo",
+        "imagenes": [
+            "ipad_pro_12(1).png",
+            "ipad_pro_12(3).png",
+            "ipad_pro_12.png",
+            "ipad_pro_12(2).png"
+        ]
+    },
+    {
+        "id": 13,
+        "marca": "Asus",
+        "titulo": "NOTEBOOK GAMER ASUS, CORE I7",
+        "categoria": "Notebooks",
+        "precio": 329999,
+        "descuento": 10,
+        "stock": 3,
+        "descripcion": "Notebook de 15.6\" FHD (1920 x 1080) 144Hz. Procesador Intel Core i7-11600h (2.6 GHz hasta 4.6 GHz). Capacidad 512GB SSD M.2 NVMe PCIe 3.0. / RAM 16GB DDR4-3200 SO-DIMM. Placa de video NVIDIAGeForceRTX3050 Laptop GPU. Bateria 48WHrs, 3S1P, 3-cell Li-ion. Bluetooth 5.2 (dual band). Teclado numerico. USB 3.2 Gen 2 Type-C / USB 3.2 Gen 1 Type-A x3. Wi Fi 6 (802.11ax). HDMI 2.0. Camara frontal 720PHD. Sistema operativo Windows 10 home. Microfono incorporado.",
+        "imagenes": [
+            "Notebook-asus.jpg",
+            "Notebook-asus 2.jpg",
+            "Notebook-asus 3.jpg",
+            "Notebook-asus 4.jpg"
+        ]
+    },
+    {
+        "id": 14,
+        "marca": "MSI",
+        "titulo": "MSI GS76 Stealth 17.3' FHD 300Hz 3ms",
+        "categoria": "Notebooks",
+        "precio": 469999,
+        "descuento": 10,
+        "stock": 3,
+        "descripcion": "Desplázate rápidamente por la ciudad con el GS76 Stealth y su elegante chasis negro. Con procesadores de la 11ª Gen. Intel® Core™ i9 y gráficas NVIDIA® GeForce RTX™ 3080, El GS76 Stealth es ultrafino y ligero, además de contar con la batería de mayor capacidad del mundo (99,9 WHr) y el nuevo Wi-Fi 6E. Profesional de día, gamer de noche, conviértete en el rey de la metrópolis con el GS76 Stealth.",
+        "imagenes": [
+            "Msi gs76.jpg",
+            "Msi gs76(1).jpg",
+            "Msi gs76(2).jpg",
+            "Msi gs76(4).jpg"
+        ]
+    },
+    {
+        "id": 15,
+        "marca": "Lenovo",
+        "titulo": "Notebook Lenovo ThinkPad E14 black 14",
+        "categoria": "Notebooks",
+        "precio": 224999,
+        "descuento": 15,
+        "stock": 54,
+        "descripcion": "La notebook Lenovo ThinkPad E14 fue pensada para hacer tu vida más sencilla. Su diseño elegante e innovador y su comodidad para transportarla, la convertirá en tu PC favorita. Cualquier tarea que te propongas, ya sea en casa o en la oficina, la harás con facilidad gracias a su poderoso rendimiento.Pantalla con gran impacto visual Su pantalla LED de 14' y 1920x1080px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.",
+        "imagenes": [
+            "Lenovo Thinkpad.png",
+            "Lenovo.webp",
+            "Lenovo(3).webp",
+            "Lenovo(4).webp"
+        ]
+    },
+    {
+        "id": 16,
+        "marca": "Apple",
+        "titulo": "MacBook Pro 16 M1 Pro 512 GB",
+        "categoria": "Notebooks",
+        "precio": 947899,
+        "descuento": 8,
+        "stock": 9,
+        "descripcion": "Llegó la MacBook Pro más poderosa de todas. De la mano de los ultrarrápidos chips M1 Pro y M1 Max, los primeros diseñados por Apple para profesionales, disfrutarás un rendimiento revolucionario con una duración excepcional de la batería. Además, tendrás una espectacular pantalla Liquid Retina XDR, la mejor cámara y el sistema de audio más avanzado en una notebook Mac, y todos los puertos que necesitas. La nueva MacBook Pro es mucho más que una notebook única en su clase: es una verdadera superpotencia.",
+        "imagenes": [
+            "Macbook pro(2).jpg",
+            "Macbook pro(1).jpg",
+            "Macbook pro(3).jpg",
+            "Macbook pro(4).jpg"
+        ]
+    }
+]

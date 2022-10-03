@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head',{title: 'Crafsy'}) %> 
+
+<body class="home">
+    <%- include('./partials/header') %> 
+    <main>
+        <section class="products_cards">
+            <% productos.forEach(producto => { %>
+                <article>
+                    <a href="/products/detail/<%= producto.id %>">
+                        <div class="img_producto" style="background-image:url('/images/productos/<%= producto.imagenes[0].nombre%>')"></div>
+                        <h3><%= producto.nombre %> </h3>
+                        <h4>$<%= producto.precio %> </h4>
+                        <button class="botonRedireccion" >añadir al Carrito</button>
+                    </a>
+                </article>
+            <% }) %>
+        </section>
+        <aside>
+            <section>
+                <h2>Tutoriales</h2>
+                <div class="grid">
+                    <% for( let i = 0; i < aside.length; i++ ) { %>
+                        <article>
+                            <img src="/images/aside/<%= aside[i].imagen %>"  alt="">
+                            <p><%= aside[i].titulo %> </p>
+                        </article>
+                    <% } %> 
+                </div>
+            </section>
+            <section class="publicidad">
+                <h2>Publicidad</h2>
+                <div class="publicidad_img">
+                    <a href="">
+                        <img src="/images/adds/ad-01.jpg" alt="add01">
+                    </a>
+                </div>
+                <div class="publicidad_img">
+                    <a href="">
+                        <img src="/images/adds/ad-02.jpg" alt="add02">
+                    </a>
+                </div>
+            </section>
+        </aside>
+    </main>
+    
+    <%- include('./partials/footer') %> 
+</body>
+</html>

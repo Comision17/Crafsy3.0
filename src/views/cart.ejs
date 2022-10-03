@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head',{title: 'Crafsy'}) %> 
+
+<body class="cart">
+
+    <%- include('./partials/header') %> 
+
+    <main>
+        <h1>Carrito de compras</h1>
+        <section>
+            <article>
+                <h3>Moto g100</h3>
+                <div class="imagenes">
+                    <img src="/images/productos/Moto-G100-pdp-kv-render-Iridescent-Sky-66hsdxr3k.png" alt="">
+                </div>
+                <div class="detail">
+                    <div class="precio-descuento">
+                        <p class="precio-secundario">$190000</p>
+                        <span>50%</span>
+                    </div>
+                    <p class="precio-principal">$95000</p>
+                    <div class="añadir-elementos">
+                        <div class="restar">-</div>
+                        <input type="number" value="1">
+                        <div class="agregar">+</div>
+                    </div>
+                </div>
+                <button><i class="fas fa-times"></i></button>
+            </article>
+            <article>
+                <h3>Moto g100</h3>
+                <div class="imagenes">
+                    <img src="/images/productos/Moto-G100-pdp-kv-render-Iridescent-Sky-66hsdxr3k.png" alt="">
+                </div>
+                <div class="detail">
+                    <div class="precio-descuento">
+                        <p class="precio-secundario">$190000</p>
+                        <span>50%</span>
+                    </div>
+                    <p class="precio-principal">$95000</p>
+                    <div class="añadir-elementos">
+                        <div class="restar">-</div>
+                        <input type="number" value="1">
+                        <div class="agregar">+</div>
+                    </div>
+                </div>
+                <button><i class="fas fa-times"></i></button>
+            </article>
+            <article>
+                <h3>Moto g100</h3>
+                <div class="imagenes">
+                    <img src="/images/productos/Moto-G100-pdp-kv-render-Iridescent-Sky-66hsdxr3k.png" alt="">
+                </div>
+                <div class="detail">
+                    <div class="precio-descuento">
+                        <p class="precio-secundario">$190000</p>
+                        <span>50%</span>
+                    </div>
+                    <p class="precio-principal">$95000</p>
+                    <div class="añadir-elementos">
+                        <div class="restar">-</div>
+                        <input type="number" value="1">
+                        <div class="agregar">+</div>
+                    </div>
+                </div>
+                <button><i class="fas fa-times"></i></button>
+            </article>
+        </section>
+        <section class="Numeros">
+            <form action="" method="post">
+                <h3>Subtotal</h3>
+                <div class="valor-productos">
+                    <p>$190000</p>
+                    <p>$190000</p>
+                    <p>$190000</p>
+                    <div class="suma"><i class="fas fa-plus"></i></div>
+                </div>
+                <span>$570000</span>
+                <p class="precio-principal">$285000</p>
+                <div class="precios">
+                    <div class="precios-categorias">
+                        <h3>¡Ahorro Total!</h3>
+                        <p class="precio-ahorro">-$285000</p>
+                    </div>
+                    <div class="precios-categorias">
+                        <h3>Precio Final</h3>
+                        <p class="Precio-final">$286000</p>
+                    </div>
+                </div>
+                <h3>Calcula tu envio</h3>
+                <div class="postal">
+                    <label for="envio">Codigo postal</label>
+                    <input type="number" name="envio" id="envio" placeholder="5501">
+                </div>
+                
+                <div class="input" >
+                    <input type="number" name="precio" id="precio" value="286000">
+                </div>
+                <div class="ofertas">
+                    <input type="checkbox" name="ofertas" id="ofertas">
+                    <label for="ofertas">Desea recibir nuestras proximas ofertas?</label>
+                </div>
+                <div class="botones">
+                    <button type="submit">Comprar Productos</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

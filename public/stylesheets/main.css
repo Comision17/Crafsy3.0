@@ -1,0 +1,158 @@
+.home main{
+    width: 98%;
+    margin: 0 auto;
+}
+
+/* Productos */
+.home main .products_cards{
+    padding: 10px;
+}
+.home main .products_cards article{
+    text-align: center;
+    background-color: white;
+    margin: 0 0 30px;
+}
+.home main .products_cards article:last-child{
+    margin: 0;
+}
+.home main .products_cards article a{
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.home main .products_cards article .img_producto{
+    height: 350px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+}
+.home main .products_cards article h3{
+    margin: 10px 0;
+}
+.home main .products_cards article button.botonRedireccion{
+    background-color: var(--Alfonzo);
+    color: white;
+    width: 80%;
+    border: none;
+    margin: 0 auto 10px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
+/* Aside */
+.home aside{
+    margin-top: 20px;
+}
+.home aside section h2{
+    padding: 10px;   
+    background-color: white;
+    margin: 10px 0;
+    border: 1px solid var(--Poroto)
+}
+.home aside section article{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid var(--Poroto)
+}
+.home aside section article p{
+    width: 50%;
+    margin: 0 10px;
+}
+.home aside .publicidad img{
+    width: 100%;
+}
+
+/* Tablet */
+@media (min-width:460px){
+    .home main .products_cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0;
+    }
+    .home main .products_cards article{
+        margin: 0 0 20px;
+        width: 48%;
+    }
+    .home main .products_cards article .img_producto{
+        max-height: 320px;
+        background-size: contain;
+        width: 100%;
+    }
+    .home main .products_cards article p{
+        font-size: small;
+    }
+    .home main .products_cards article h3{
+        margin: 0;
+    }
+    .home main aside section .grid{
+        display: grid;
+        grid-template-columns: 48% 48%;
+        grid-gap: 10px;
+        margin-bottom: 15px;
+    }
+    .home aside section article {
+        justify-content: center;
+    }
+    .home aside section article p {
+        width: 80%;
+        margin: 10px 10px;
+        text-align: center;
+    }
+    .home aside .publicidad h2{
+        width: 100%;
+    }
+    .home aside .publicidad{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .home aside .publicidad .publicidad_img{
+        width: 48%;
+    }
+}
+/* Desktop */
+@media (min-width:769px) {
+    .home main {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .home main .products_cards{
+        width: 74%;
+    }
+    .home main .products_cards article .img_producto{
+        height: 350px;
+    }
+    .home main aside{
+        width: 24%;
+        margin-top: 0;
+    }
+    .home aside section h2:first-child{
+        margin-top: 0;
+    }
+    .home main aside section .grid{
+        display: block;
+    }
+    .home aside .publicidad .publicidad_img{
+        width: 100%;
+    }
+}
+
+@media (min-width:1159px) {
+    .home main aside section .grid article p{
+        width: 50%;
+        text-align: start;
+    }
+    .home main aside section .grid article{
+        justify-content: flex-start;
+    }
+}

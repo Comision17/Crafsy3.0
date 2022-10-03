@@ -1,0 +1,227 @@
+/* Articulo */
+.cart section article{
+    background-color: var(--Marta);
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid var(--Alfonzo);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 20px
+}
+.cart section article h3{
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.cart section article .imagenes img{
+    width: 100%;
+}
+.cart section article .imagenes{
+    width: 33%;
+}
+.cart section article .detail{
+    width: 66%;
+    text-align: center;
+}
+.cart section article .precio-descuento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart section article .precio-secundario{
+    font-size: 24px;
+    color: grey;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+.cart section article span{
+    font-size: 24px;
+    color: green;
+}
+.cart section article .precio-principal{
+    font-size: 3rem;
+    color: var(--Alfonzo);
+    width: 100%;
+}
+.cart section article .añadir-elementos{
+    display: flex;
+    justify-content: center;
+}
+.cart section article .añadir-elementos input{
+    width: 50px;
+    border: none;
+    text-align: center;
+}
+.cart section article .añadir-elementos div{
+    background-color: var(--Alfonzo);
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+.cart section article button{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    padding: 5px;
+    background-color: var(--Ruben);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+.cart .Numeros{
+    width: 90%;
+    margin: 0 auto;
+    background-color: var(--Alfonzo);
+    color: white;
+    padding: 20px;
+}
+.cart .Numeros h3{
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+.cart .Numeros h3:first-child{
+    margin-top: 0;
+}
+.cart .Numeros .valor-productos{
+    width: 50%;
+    font-size: 20px;
+    color: var(--Poroto);
+    border-bottom: 1px solid black;
+    text-align: end;
+    position: relative;
+}
+.cart .Numeros .valor-productos .suma{
+    position: absolute;
+    bottom: 0;
+}
+.cart .Numeros span{
+    display: inline-block;
+    width: 50%;
+    color: var(--Poroto);
+    font-size: 1.5rem;
+    text-align: end;
+    text-decoration: line-through;
+}
+
+.cart .Numeros p.precio-principal{
+    width: 50%;
+    text-align: end;
+    font-size: 2rem;
+}
+.cart .Numeros p{
+    color: var(--Poroto);
+}
+.cart .Numeros .precio-ahorro{
+    font-size: 2rem;
+    text-align: end;
+}
+.cart .Numeros .input{
+    display: none;
+}
+
+.cart .Numeros .Precio-final{
+    font-size: 2rem;
+    text-align: end;
+    width: 60%;
+}
+.cart .Numeros .precios-categorias{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.cart .Numeros .postal{
+    border: 1px solid var(--Poroto);
+    width: 70%;
+    margin: 10px auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cart .Numeros .postal input{
+    border: none;
+    width: 110px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.cart .Numeros .ofertas{
+    margin: 20px 0;
+    font-size: 1.4rem;
+}
+.cart .Numeros button{
+    background-color: var(--Ruben);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 75px;
+}
+.cart .Numeros button a{
+    color: white;
+}
+.cart .Numeros .botones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* Tablet */
+@media (min-width:426px){
+    .cart section article .detail{
+        width: 66%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .cart section form{
+        max-height: 650px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+/* Desktop */
+@media (min-width:769px){
+    .cart main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .cart main h1{
+        width: 100%;
+    }
+    .cart main section{
+        width: 58%;
+        padding-top: 20px;
+    }
+    .cart main section.Numeros{
+        width: 40%;
+        border-radius: 10px;
+    }
+}
+@media (min-width:800px){
+    .cart main section.Numeros{
+        max-height: 600px;
+    }
+}
+@media (min-width:1306px){
+    .cart main section.Numeros{
+        max-height: 560px;
+    }
+}
