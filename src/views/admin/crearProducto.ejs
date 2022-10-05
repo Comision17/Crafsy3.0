@@ -136,6 +136,7 @@
                     <!-- Selects  -->
                     <div class="container m-3" >
                         <div class="row justify-content-around align-items-center">
+                            
                             <div class="col col-4">
                                 <h3 class="text-center">Categorias</h3>
                                 <select class="form-select" name="categoria" id="floatingSelect" aria-label="Floating label select example">
@@ -153,9 +154,9 @@
                                         <% }) %>
                                     <% } %> 
                                   </select>
-                                  <p class="span text-danger">
-                                    <%= locals.errors && errors.categoria ? errors.categoria.msg : null %>
-                                </p>
+                                <% if (locals.errors && errors.categoria) { %>
+                                    <p class="span text-danger"><%=  errors.categoria.msg %></p>
+                                <% } %>
                             </div>
                             <div class="col col-4">
                                 <h3 class="text-center">Marcas</h3>

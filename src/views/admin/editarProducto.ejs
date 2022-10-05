@@ -6,10 +6,10 @@
     <%- include('../partials/header') %>
 
         <!-- Titulo -->
-        <h1 class="text-center pt-5 pb-5">Editando el producto <%= producto.titulo %> </h1>
+        <h1 class="text-center pt-5 pb-5">Editando el producto <%= producto.nombre %> </h1>
 
         <!-- Comienzo del Formulario -->
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="/admin/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
             <!-- Contenedor de imagenes y Principales -->
             <div class="container">
@@ -18,12 +18,8 @@
                     <!-- Principales -->
                     <div class="col col-lg-4 col-md-12 col-sm-12">
                         <div class="form-floating mb-3"> 
-                            <input type="text" class="form-control" name="titulo" placeholder="Nombre del producto" id="name" value="<%= producto.titulo %>" placeholder="name@example.com">
+                            <input type="text" class="form-control" name="titulo" placeholder="Nombre del producto" id="name" value="<%= producto.nombre %>" placeholder="name@example.com">
                             <label for="name">Nombre del producto</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" type="text" name="marca" value="<%= producto.marca %>" placeholder="Marca del Producto" id="brand">
-                            <label class="form-label" for="brand">Marca del Producto</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input class="form-control" type="number" name="precio" value="<%= producto.precio %>" placeholder="Precio del producto" id="price">
@@ -52,13 +48,13 @@
 
                                     <div class="col col-5">
                                         <label class="selectImg" for="product-img">
-                                            <img id="img-preview" class="img-fluid img-thumbnail imagen-height rounded" src="/images/productos/<%= producto.imagenes[0]%>" alt="">
+                                            <img id="img-preview" class="img-fluid img-thumbnail imagen-height rounded" src="/images/productos/<%= producto.imagenes[0].nombre%>" alt="">
                                             <div class="imgHover">
                                                 <p class="text-center">Selecionar Imagen 1</p>
                                             </div>
                                         </label>
                                         <div class="form-admin__box inactivo">
-                                            <input class="d-none" id="product-img" type="file" name="imagen" placeholder="Imagen del Producto" accept="image/*" multiple>
+                                            <input class="d-none" id="product-img" type="file" name="imagen1" placeholder="Imagen del Producto" accept="image/*" multiple>
                                         </div>
                                     </div>
 
@@ -66,13 +62,13 @@
 
                                     <div class="col col-5">
                                         <label class="selectImg" for="product-sub-img-1">
-                                            <img id="sub-img-preview-1" class="img-fluid img-thumbnail  imagen-height rounded" src="/images/productos/<%= producto.imagenes[1]%>" alt="" >
+                                            <img id="sub-img-preview-1" class="img-fluid img-thumbnail  imagen-height rounded" src="/images/productos/<%= producto.imagenes[1].nombre%>" alt="" >
                                             <div class="imgHover">
                                                 <p class="text-center">Selecionar Imagen 2</p>
                                             </div>
                                         </label>
                                         <div class="form_desciption__box inactivo">
-                                            <input class="d-none" id="product-sub-img-1" type="file" name="imagen" placeholder="Imagen del Producto">
+                                            <input class="d-none" id="product-sub-img-1" type="file" name="imagen2" placeholder="Imagen del Producto">
                                         </div>
                                     </div>
 
@@ -80,13 +76,13 @@
 
                                     <div class="col col-5">
                                         <label class="selectImg" for="product-sub-img-2">
-                                            <img id="sub-img-preview-2" class="img-fluid img-thumbnail imagen-height rounded" src="/images/productos/<%= producto.imagenes[2]%>" height="auto" alt="" >
+                                            <img id="sub-img-preview-2" class="img-fluid img-thumbnail imagen-height rounded" src="/images/productos/<%= producto.imagenes[2].nombre%>" height="auto" alt="" >
                                             <div class="imgHover">
                                                 <p class="text-center">Selecionar Imagen 3</p>
                                             </div>
                                         </label>
                                         <div class="form_desciption__box inactivo">
-                                            <input class="d-none " id="product-sub-img-2" type="file" name="imagen" placeholder="Imagen del Producto">
+                                            <input class="d-none " id="product-sub-img-2" type="file" name="imagen3" placeholder="Imagen del Producto">
                                         </div>
                                     </div>
 
@@ -94,13 +90,13 @@
 
                                     <div class="col col-5">
                                         <label class="selectImg" for="product-sub-img-3">
-                                            <img id="sub-img-preview-3" class="img-fluid img-thumbnail imagen-height rounded" src="/images/productos/<%= producto.imagenes[3]%>" alt="" >
+                                            <img id="sub-img-preview-3" class="img-fluid img-thumbnail imagen-height rounded" src="/images/productos/<%= producto.imagenes[3].nombre%>" alt="" >
                                             <div class="imgHover">
                                                 <p class="text-center">Selecionar Imagen 4</p>
                                             </div>
                                         </label>
                                         <div class="form_desciption__box inactivo">
-                                            <input class="d-none" id="product-sub-img-3" type="file" name="imagen" placeholder="Imagen del Producto">
+                                            <input class="d-none" id="product-sub-img-3" type="file" name="imagen4" placeholder="Imagen del Producto">
                                         </div>
                                     </div>
 
@@ -127,12 +123,48 @@
                             <div class="col col-4">
                                 <h3 class="text-center">Categorias</h3>
                                 <select class="form-select" name="categoria" id="floatingSelect" aria-label="Floating label select example">
-                                    <% categorias.forEach(categoria => { %>
-                                        <option value="<%= categoria %>" <%= producto.categorias.toLowerCase() === categoria.toLowerCase() ? 'selected' : null %> ><%= categoria %></option>
-                                      <% }) %>
+                                    <% if (locals.errors && old.categoria) { %>
+                                        <option hidden value="">Selecciona una opcion</option>
+                                        <option <%= old.categoria == "1" ? "selected" : null %>  value="Smartphones">Smartphones</option>
+                                        <option <%= old.categoria == "2" ? "selected" : null %>   value="Tablets">Tablets</option>
+                                        <option <%= old.categoria == "3" ? "selected" : null %>   value="Notebooks">Notebooks</option>
+                                        <option <%= old.categoria == "4" ? "selected" : null %>   value="Consolas">Consolas</option>
+                                        <option <%= old.categoria == "5" ? "selected" : null %>   value="Otros">Otros</option>
+                                    <% }else{ %>
+                                        <option selected hidden value="">Selecciona una opcion</option>
+                                        <% categorias.forEach(categoria => { %>
+                                            <option value="<%= categoria.id %>" <%= producto.categoriasId === categoria.id ? "selected" : null %>><%= categoria.nombre %></option>
+                                        <% }) %>
+                                    <% } %> 
                                   </select>
+                                <% if (locals.errors && errors.categoria) { %>
+                                    <p class="span text-danger"><%=  errors.categoria.msg %></p>
+                                <% } %>
                             </div>
-                    
+                            <div class="col col-4">
+                                <h3 class="text-center">Marcas</h3>
+                                <select class="form-select" name="marca" id="floatingSelect" aria-label="Floating label select example">
+                                    <% if (locals.errors && old.marca) { %>
+                                        <option hidden value="">Selecciona una opcion</option>
+                                        <% marcas.forEach(marca => { %>
+                                            <% if (marca.id == old.marca) { %>
+                                                <option value="<%= marca.id %>" selected><%= marca.nombre %></option>
+                                            <% }else{ %>
+                                                <option value="<%= marca.id %>"><%= marca.nombre %></option>
+                                            <% } %>
+                                            <option value="<%= marca.id %>"><%= marca.nombre %></option>
+                                        <% }) %>
+                                    <% }else{ %>
+                                        <option selected hidden value="">Selecciona una opcion</option>
+                                        <% marcas.forEach(marca => { %>
+                                            <option value="<%= marca.id %>" <%= producto.marcasId === marca.id ? "selected" : null %>><%= marca.nombre %></option>
+                                        <% }) %>
+                                    <% } %> 
+                                </select>
+                                <% if (locals.errors && errors.marca) { %>
+                                    <p class="span text-danger"><%= errors.marca.msg %></p>
+                                <% } %>
+                            </div>
                         </div>
                     </div>
 
