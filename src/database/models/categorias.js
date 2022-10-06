@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
         as: 'productos',
         foreignKey: 'categoriasId'
       })
+      Categorias.hasMany(models.Historiales,{
+        as: 'historiales',
+        foreignKey: 'categoriasId'
+      })
     }
   }
   Categorias.init({
