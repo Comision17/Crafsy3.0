@@ -1,4 +1,5 @@
 let db = require('../database/models')
+const { Op } = require("sequelize");
 
 module.exports = {
     home : (req,res) => {
@@ -21,14 +22,14 @@ module.exports = {
     search : (req,res) => {
         let elemento = req.query.search
 
-        let resultados = productos.filter(producto => {
-            return producto.marca.toLowerCase() === elemento.toLowerCase() || (producto.titulo.toLowerCase().includes(elemento.toLowerCase())) /* || (producto.descripcion.toLowerCase().includes(elemento.toLowerCase())) */
+        db.Productos.findAll({
+            where : {
+                [Op.or] : [
+                    {nombre : {[Op.substring] : elemento}},
+                    {descripcion : {[Op.substring] : elemento}}
+                ]
+            }
         })
-        /* Codigo de nico */
-        /* let resultados = productos.filter(producto => {
-            return (producto.titulo.toLowerCase().indexOf(elemento.toLowerCase()) != -1)
-        }) */
-
         return res.render('busqueda', 
         {
             busqueda: elemento,

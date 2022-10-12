@@ -1,15 +1,13 @@
 const fs = require('fs')
 const path = require('path')
-const productos = require('../data/productos.json')
-const historial = require('../data/historial.json')
-
-let db = require('../database/models')
-
 const { validationResult } = require('express-validator')
+let db = require('../database/models')
+/* CD del recuerdo para fiestas de 15 años */
+/* const productos = require('../data/productos.json')
+const historial = require('../data/historial.json') */
 
 module.exports = {
     list: (req, res) => {
-
         db.Productos.findAll({
             include : [{
                 all : true
@@ -66,10 +64,10 @@ module.exports = {
                 descuento: +descuento,
                 stock: +stock,
                 descripcion,
-                categoriasId: categoria,
-                marcasId: marca,
+                categoriasId: +categoria,
+                marcasId: +marca,
             })
-            .then( productoNuevo => {
+            .then(productoNuevo => {
 
                 if (req.files) {
                     let img = req.files.map(imagen => {
@@ -79,7 +77,6 @@ module.exports = {
                         }
                         return nuevo
                     })
-
                     db.Imagenes.bulkCreate(img)
                     .then(imagenes => {
                         return res.redirect('/admin/list')
@@ -111,8 +108,7 @@ module.exports = {
         }
     },
     edit: (req, res) => {
-        idParams = +req.params.id
-
+        let idParams = +req.params.id
         let categorias = db.Categorias.findAll()
         let marcas = db.Marcas.findAll()
         let producto = db.Productos.findOne({
@@ -176,6 +172,7 @@ module.exports = {
                 let imagen2
                 let imagen3
                 let imagen4
+                let promesas = []
 
                 /* Imagen 1 */
                 /* Existe en la base de datos */
@@ -185,13 +182,14 @@ module.exports = {
                         /* Guardo el nombre en una variable para despues borrarla */
                         imagen1 = producto.imagenes[0].nombre
                         /* La reemplazamos en la base de datos */
-                        db.Imagenes.update({
+                        promesas.push(
+                            db.Imagenes.update({
                             nombre:req.files.imagen1[0].filename
                         },{
                             where: {
                                 id : producto.imagenes[0].id
                             }
-                        })
+                        }))
                         /* Borramos la imagen anterior */
                         if(fs.existsSync(path.join(__dirname,'../../public/images/productos',imagen1))){
                             fs.unlinkSync(path.join(__dirname, '../../public/images/productos', imagen1))
@@ -202,10 +200,11 @@ module.exports = {
                     if(!!req.files.imagen1){
 
                         /* Creamos la imagen en la base de datos */
+                        promesas.push(
                         db.Imagenes.create({
                             nombre: req.files.imagen1[0].filename,
                             productosId: producto.id
-                        })
+                        }))
                     }
                 }
 
@@ -213,72 +212,81 @@ module.exports = {
                 if (producto.imagenes[1].length !== 0) {
                     if(!!req.files.imagen2){
                         imagen2 = producto.imagenes[1].nombre
+                        promesas.push(
                         db.Imagenes.update({
                             nombre:req.files.imagen2[0].filename
                         },{
                             where: {
                                 id : producto.imagenes[1].id
                             }
-                        })
+                        }))
                         if(fs.existsSync(path.join(__dirname,'../../public/images/productos',imagen2))){
                             fs.unlinkSync(path.join(__dirname, '../../public/images/productos', imagen2))
                         }
                     }
                 }else{
                     if(!!req.files.imagen2){
+                        promesas.push(
                         db.Imagenes.create({
                             nombre: req.files.imagen2[0].filename,
                             productosId: producto.id
-                        })
+                        }))
                     }
                 }
                 /* Imagen 3 */
                 if (producto.imagenes[2].length !== 0) {
                     if(!!req.files.imagen3){
                         imagen3 = producto.imagenes[2].nombre
+                        promesas.push(
                         db.Imagenes.update({
                             nombre:req.files.imagen3[0].filename
                         },{
                             where: {
                                 id : producto.imagenes[2].id
                             }
-                        })
+                        }))
                         if(fs.existsSync(path.join(__dirname,'../../public/images/productos',imagen3))){
                             fs.unlinkSync(path.join(__dirname, '../../public/images/productos', imagen3))
                         }
                     }
                 }else{
                     if(!!req.files.imagen3){
+                        promesas.push(
                         db.Imagenes.create({
                             nombre: req.files.imagen3[0].filename,
                             productosId: producto.id
-                        })
+                        }))
                     }
                 }
                 /* Imagen 4 */
                 if (producto.imagenes[3].length !== 0) {
                     if(!!req.files.imagen4){
                         imagen4 = producto.imagenes[3].nombre
+                        promesas.push(
                         db.Imagenes.update({
                             nombre:req.files.imagen4[0].filename
                         },{
                             where: {
                                 id : producto.imagenes[3].id
                             }
-                        })
+                        }))
                         if(fs.existsSync(path.join(__dirname,'../../public/images/productos',imagen4))){
                             fs.unlinkSync(path.join(__dirname, '../../public/images/productos', imagen4))
                         }
                     }
                 }else{
                     if(!!req.files.imagen4){
+                        promesas.push(
                         db.Imagenes.create({
                             nombre: req.files.imagen4[0].filename,
                             productosId: producto.id
-                        })
+                        }))
                     }
                 }
-                return res.redirect('/admin/list')
+                Promise.all(promesas)
+                .then(promesas => {
+                    return res.redirect('/admin/list')
+                })
             })
             .catch(error => res.send(error))
         } else {
@@ -311,6 +319,7 @@ module.exports = {
                 marcasId: producto.marcasId,
             })
             .then(historial => {
+                let promesas = []
 
                 let imagen1 = db.HistorialImagenes.create({
                     nombre: producto.imagenes[0].nombre,
@@ -357,41 +366,88 @@ module.exports = {
                 redirection: "list"
             })
         })
-
-        
     },
     restore: (req, res) => {
-        idParams = +req.params.id
-
-        let productoParaRestaurar = historial.find((elemento) => {
-            return elemento.id == idParams
+        let idParams = +req.params.id
+        db.Historiales.findOne({
+            where : {
+                id :idParams
+            },
+            include : [{
+                all : true
+            }]
         })
-        let lastId = productos[productos.length - 1].id + 1
-        productoParaRestaurar.id = lastId
-
-        productos.push(productoParaRestaurar)
-        guardar(productos)
-
-        let historialModificado = historial.filter(producto => producto.id !== idParams)
-        guardarHistorial(historialModificado)
-
-        return res.redirect('/admin/list')
+        .then(historialProducto => {
+            db.Productos.create({
+                nombre: historialProducto.nombre,
+                precio: historialProducto.precio,
+                descuento: historialProducto.descuento,
+                stock: historialProducto.stock,
+                descripcion:historialProducto.descripcion,
+                categoriasId: historialProducto.categoriasId,
+                marcasId: historialProducto.marcasId,
+            })
+            .then(productoNuevo => {
+                let imagen1 = db.Imagenes.create({
+                    nombre: historialProducto.imagenes[0].nombre,
+                    productoId: productoNuevo.id
+                })
+                let imagen2 = db.Imagenes.create({
+                    nombre: historialProducto.imagenes[1].nombre,
+                    productoId: productoNuevo.id
+                })
+                let imagen3 = db.Imagenes.create({
+                    nombre: historialProducto.imagenes[2].nombre,
+                    productoId: productoNuevo.id
+                })
+                let imagen4 = db.Imagenes.create({
+                    nombre: historialProducto.imagenes[3].nombre,
+                    productoId: productoNuevo.id
+                })
+                Promise.all([imagen1,imagen2,imagen3,imagen4])
+                .then(([imagen1,imagen2,imagen3,imagen4]) =>{
+                    db.Historiales.destroy({
+                        where : {
+                            id : idParams
+                        }
+                    })
+                    .then(eliminar => {
+                        return res.redirect('/admin/list')
+                    })
+                })
+            })
+        })
+        .catch(errores => res.send(errores))
     },
     crash: (req, res) => {
-        idParams = +req.params.id
+        let idParams = +req.params.id
 
-        let producto = historial.find(product => product.id === idParams)
-        let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', dato))
-
-        producto.imagenes.forEach(imagen => {
-            if (ruta(imagen) && (imagen !== "default-image.png")) {
-                fs.unlinkSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', imagen))
-            }
+        db.Historiales.findOne({
+            where : {
+                id : idParams
+            },
+            include : [{
+                all : true
+            }]
         })
+        .then(producto => {
+            
+            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', dato))
+            producto.imagenes.forEach(imagen => {
+                if (ruta(imagen.nombre) && (imagen.nombre !== "default-image.png")) {
+                    fs.unlinkSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', imagen.nombre))
+                }
+            })
 
-        let historialModificado = historial.filter(producto => producto.id !== idParams)
-        guardarHistorial(historialModificado)
-
-        return res.redirect('/admin/list')
+            db.Historiales.destroy({
+                where : {
+                    id : idParams
+                }
+            })
+            .then(eliminar => {
+                return res.redirect('/admin/list')
+            })
+        })
+        .catch(errores => res.send(errores))
     },
 }
