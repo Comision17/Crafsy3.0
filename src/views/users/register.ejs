@@ -9,10 +9,11 @@
 
     <main>
         <h1>Registro</h1>
-        <form action="" method="POST" enctype="multipart/form-data">
-            <div class="container bottom">
+        <form action="" method="POST" enctype="multipart/form-data" id="formulario">
+            <div class="container bottom" >
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.name ? old.name : null%>">
+                <div id="nameContainer"></div>
                 <% if (locals.errors && errors.name) { %>
                     <small><%= errors.name.msg %></small>
                 <% } %>
@@ -20,6 +21,7 @@
             <div class="container bottom">
                 <label for="lastname">Apellido</label>
                 <input type="text" name="lastname" id="lastname" placeholder="Ingresa tu apellido" value="<%= locals.old && old.lastname ? old.lastname : null%>">
+                <div id="apellidoContainer"></div>
                 <% if (locals.errors && errors.lastname) { %>
                     <small><%= errors.lastname.msg %></small>
                 <% } %>
@@ -27,20 +29,29 @@
             <div class="container bottom">
                 <label for="name">Email</label>
                 <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email ? old.email : null%>">
+                <div id="emailContainer"></div>
                 <% if (locals.errors && errors.email) { %>
                     <small><%= errors.email.msg %></small>
                 <% } %>
             </div>
             <div class="container bottom">
                 <label for="pass">Contraseña</label>
-                <input type="password" name="pass" id="pass" placeholder="Ingresa tu Contraseña">
+                <div class="password">
+                    <input type="password" name="pass" id="pass" placeholder="Ingresa tu Contraseña">
+                    <i class="fas fa-eye-slash" id="eye-pass"></i>
+                </div>
+                <div id="passContainer"></div>
                 <% if (locals.errors && errors.pass) { %>
                     <small><%= errors.pass.msg %></small>
                 <% } %>
             </div>
             <div class="container bottom">
                 <label for="pass2">Confirma tu contraseña</label>
-                <input type="password" name="pass2" id="pass2" placeholder="Confirmar Contraseña">
+                <div class="password">
+                    <input type="password" name="pass2" id="pass2" placeholder="Confirmar Contraseña">
+                    <i class="fas fa-eye-slash" id="eye-pass2"></i>
+                </div>
+                <div id="passContainer2"></div>
                 <% if (locals.errors && errors.pass2) { %>
                     <small><%= errors.pass2.msg %></small>
                 <% } %>
@@ -56,18 +67,20 @@
                     <option value="uruguay">Uruguay</option>
                     <option value="colombia">Colombia</option>
                 </select>
+                <div id="paisContainer"></div>
                 <% if (locals.errors && errors.pais) { %>
                     <small><%= errors.pais.msg %></small>
                 <% } %>
             </div>
             <h2 class="bottom">Genero</h2>
             <div class="bottom">
-                <input type="radio" name="genero" id="F" value="F" <%= locals.old && old.genero==='F' ? "checked" : null%> >
+                <input type="radio" name="genero" id="F" class="genero" value="F" <%= locals.old && old.genero==='F' ? "checked" : null%> >
                 <label for="F">Femenino</label>
-                <input type="radio" name="genero" id="M" value="M" <%= locals.old && old.genero==='M' ? "checked" : null%>>
+                <input type="radio" name="genero" id="M" class="genero" value="M" <%= locals.old && old.genero==='M' ? "checked" : null%>>
                 <label for="M">Masculino</label>
-                <input type="radio" name="genero" id="SN" value="SN" <%= locals.old && old.genero==='SN' ? "checked" : null%> >
+                <input type="radio" name="genero" id="SN" class="genero" value="SN" <%= locals.old && old.genero==='SN' ? "checked" : null%> >
                 <label for="SN">Prefiero no decirlo</label>
+                <div id="generoContainer"></div>
                 <% if (locals.errors && errors.genero) { %>
                     <small><%= errors.genero.msg %></small>
                 <% } %>
@@ -75,6 +88,7 @@
             <div class="container container-img">
                 <label for="image">Subi tu imagen aqui</label>
                 <input type="file" name="image" id="image">
+                <div id="imageContainer"></div>
                 <% if (locals.errors && errors.image) { %>
                     <small><%= errors.image.msg %></small>
                 <% } %>
@@ -83,6 +97,7 @@
             <div class="bottom">
                 <input type="checkbox" name="terminos" id="terminos">
                 <label for="terminos">Acepto los terminos y condiciones</label>
+                <div id="terminosContainer"></div>
                 <% if (locals.errors && errors.terminos) { %>
                     <small><%= errors.terminos.msg %></small>
                 <% } %>

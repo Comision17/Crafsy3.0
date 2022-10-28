@@ -13,10 +13,10 @@ const userLogin = require('./middlewares/userLoginCheck')
 const dbConnectionTest = require('./middlewares/dbConnectionTest')
 
 /* Livereload */
-const livereload = require('livereload')
+/* const livereload = require('livereload')
 const connectLivereload = require('connect-livereload')
 
-const liveReloadServer = livereload.createServer()
+const liveReloadServer = livereload.createServer() */
 
 /* Importacion de rutas */
 const indexRouter = require('./routes/index');
@@ -28,12 +28,12 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-liveReloadServer.watch(path.join(__dirname, 'views'))
+/* liveReloadServer.watch(path.join(__dirname, 'views')) */
 app.set('view engine', 'ejs');
 
 dbConnectionTest()
 
-app.use(connectLivereload())
+/* app.use(connectLivereload()) */
 app.use(logger('dev'));
 
 /* Trabajar con metodos HTTP (post) */
@@ -60,11 +60,11 @@ app.use('/products', productsRouter);
 app.use('/admin', adminRouter);
 
 /* Funcion de actualizacion del servidor */
-liveReloadServer.server.once("connection", () => {
+/* liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
     liveReloadServer.refresh("/");
   }, 100);
-});
+}); */
 
 
 

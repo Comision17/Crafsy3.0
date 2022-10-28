@@ -31,9 +31,10 @@
                     </article>  
                     <article>
                         <div class="sumar-carrito">
-                            <div class="restar">-</div>
-                            <input type="number">
-                            <div class="agregar">+</div>
+                            <input value="<%= producto.stock %>" id="stockOculto" />
+                            <div class="restar" id="decrease">-</div>
+                            <input type="number" id="contador" value="1">
+                            <div class="agregar" id="increase">+</div>
                         </div>
                         <button>Comprar producto</button>
                     </article>
@@ -75,5 +76,6 @@
             </section>
         </main>
         <%- include('./partials/footer') %> 
+        <script src="/javascripts/increase.js"></script>
     </body>
 </html>

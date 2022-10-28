@@ -1,15 +1,16 @@
-.register main{
+.register main {
     width: 90%;
     max-width: 400px;
     margin: 0 auto;
     padding-bottom: 50px;
     color: var(--Jorge)
 }
-.register main h1{
+
+.register main h1 {
     text-align: center;
 }
 
-.register main .container{
+.register main .container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -17,18 +18,34 @@
     justify-content: center;
     font-weight: bold;
 }
-.register main .container label{
+
+.register main .container .password {
+    width: 100%;
+    position: relative;
+}
+
+.register main .container .password i {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    padding: 10px;
+}
+
+.register main .container label {
     margin-bottom: 5px;
 }
-.register main .container input{
+
+.register main .container input {
     width: 100%;
     padding: 10px;
 }
-.register main small{
+
+.register main small {
     margin-top: 5px;
     color: var(--Alfonzo);
 }
-.register main button{
+
+.register main button {
     padding: 15px;
     background-color: var(--Ruben);
     color: white;
@@ -38,14 +55,16 @@
     font-size: 20px;
     width: 170px;
 }
-.register main textarea{
+
+.register main textarea {
     resize: none;
 }
-.register .bottom{
+
+.register .bottom {
     margin-bottom: 20px;
 }
 
-.register .container-img label{
+.register .container-img label {
     background-color: var(--Rogelio);
     padding: 15px;
     border-radius: 15px;
@@ -53,11 +72,13 @@
     margin-bottom: 20px;
     color: white;
 }
-.register .container-img label:hover{
+
+.register .container-img label:hover {
     background-color: white;
     border: 1px solid black;
     color: var(--Rogelio);
 }
-.register .container-img input{
+
+.register .container-img input {
     display: none;
 }
