@@ -23,6 +23,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
+const apiRouter = require('./routes/api/apiRouter');
 
 const app = express();
 
@@ -58,6 +59,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/admin', adminRouter);
+app.use('/api',apiRouter);
 
 /* Funcion de actualizacion del servidor */
 /* liveReloadServer.server.once("connection", () => {
