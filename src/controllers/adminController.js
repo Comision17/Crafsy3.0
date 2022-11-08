@@ -21,6 +21,23 @@ module.exports = {
             })
         })
     },
+    listV2: (req, res) => {
+
+        let categorias = db.Categorias.findAll()
+        let marcas = db.Marcas.findAll()
+        
+        Promise.all([categorias,marcas])
+        .then(([categorias,marcas]) => {
+                
+                return res.render('admin/listaProductosV2', {
+                    categorias,
+                    marcas,
+                    redirection: "history"
+                })
+        })
+        .catch(error => res.send(error))
+
+    },
     create: async (req, res) => {
         try {
             let categorias = await db.Categorias.findAll()

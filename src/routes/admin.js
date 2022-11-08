@@ -1,4 +1,4 @@
-const {list,create,edit,store,update,destroy,history,restore,crash,create2} = require('../controllers/adminController')
+const {list,create,edit,store,update,destroy,history,restore,crash,create2, listV2} = require('../controllers/adminController')
 const express = require('express');
 const router = express.Router();
 const upload = require('../middlewares/multerProducts')
@@ -6,7 +6,7 @@ const upload = require('../middlewares/multerProducts')
 const productValidator = require('../validations/productsValidation') */
 
 /* GET home page. */
-router.get('/list',/* adminCheck, */ list);
+router.get('/list',/* adminCheck, */ listV2);
 router.get('/history',/* adminCheck, */ history);
 
 /* Creando un producto */

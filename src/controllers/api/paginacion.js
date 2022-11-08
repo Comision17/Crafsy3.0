@@ -17,7 +17,7 @@ module.exports = {
             let {orderBy, orderDirect, page, size, ...updateQuery} = req.query;
 
             const order = orderBy ? orderBy : 'id'
-            const direction = orderDirect ? orderDirect : 'DESC'
+            const direction = orderDirect ? orderDirect : 'ASC'
 
             //console.log(updateQuery)
 
@@ -96,10 +96,20 @@ module.exports = {
                 }
             
             }
-
+            // incluimos las relaciones con marca y categoria para poder visualizarlos en las tablas(unicamente nos traemos los nombres)
             let data = await db.Productos.findAndCountAll({
                 where: updateQuery,
                 order: [[order, direction]],
+                include : [
+                    {
+                        association : 'marca',
+                        attributes: ['nombre']
+                    },
+                    {
+                        association : 'category',
+                        attributes: ['nombre']
+                    }
+                ],
                 limit,
                 offset
             })
