@@ -18,8 +18,8 @@ module.exports = {
 
             const order = orderBy ? orderBy : 'id'
             const direction = orderDirect ? orderDirect : 'ASC'
-
-            //console.log(updateQuery)
+            console.log(req.query)
+            console.log(updateQuery)
 
             for(let key in updateQuery) {
                 
@@ -38,8 +38,9 @@ module.exports = {
                     delete updateQuery[key]
                     url.searchParams.delete(key)
                 }
+                //console.log(updateQuery)
             }
-            //console.log(updateQuery)
+            console.log(updateQuery)
             const getPagination = (page, size) => {
 
                 const limit = size ? +size : 5

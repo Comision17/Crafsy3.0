@@ -18,15 +18,8 @@ module.exports = {
           key: 'id'
         },
       },
-      carritosId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: {
-            tableName: 'Carritos'
-          },
-          key: 'id'
-        },
+      status: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

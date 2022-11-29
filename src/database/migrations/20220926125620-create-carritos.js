@@ -28,6 +28,19 @@ module.exports = {
           key: 'id'
         },
       },
+      ordenesId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: {
+            tableName: 'Ordenes'
+          },
+          key: 'id'
+        },
+      },
+      cantidad: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
