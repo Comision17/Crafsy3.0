@@ -108,26 +108,29 @@ module.exports = {
                     req.session.carrito = []
 
                     db.Ordenes.findOne({
-                        usuariosId: req.session.userLogin.id,
-                        status: 'pending',
-                        include: [
-                            {
-                                association : 'carrito',
-                                attributes: ['productosId', 'cantidad'],
-                                include: [
-                                    {
-                                        association : 'producto',
-                                        attributes: ['id', 'nombre', 'precio', 'descuento', 'stock'],
-                                        include: [
-                                            {
-                                                association : 'imagenes',
-                                                attributes: ['nombre']
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
+                        where: {
+                            usuariosId: req.session.userLogin.id,
+                            status: 'pending'
+                        },
+                            include: [
+                                {
+                                    association : 'carrito',
+                                    attributes: ['productosId', 'cantidad'],
+                                    include: [
+                                        {
+                                            association : 'producto',
+                                            attributes: ['id', 'nombre', 'precio', 'descuento', 'stock'],
+                                            include: [
+                                                {
+                                                    association : 'imagenes',
+                                                    attributes: ['nombre']
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        
                     })
                     .then(orden => {
 

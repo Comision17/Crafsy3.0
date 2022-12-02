@@ -2,8 +2,20 @@ let db = require('../../database/models')
 const { Op } = require("sequelize");
 
 
-// addItem 
-// 
+const productVerify = (carrito, id) => {
+
+    let index = -1;
+
+    for (let i = 0; i < carrito.length; i++) {
+
+        if (carrito[i].id === +id) {
+            index = i;
+            break
+        }
+    }
+
+    return index
+}
 
 
 module.exports = {
@@ -26,6 +38,7 @@ module.exports = {
             res.status(500).json(error)
         }
     },
+
     addItem: async (req, res) => {
 
         // recibimos un id producto
@@ -43,7 +56,7 @@ module.exports = {
         //     - agregarlo a la session
 
 
-         //buscamos los datos del producto
+        //buscamos los datos del producto
         let producto = await db.Productos.findOne({
             where: {
                 id: +req.params.id
@@ -65,27 +78,27 @@ module.exports = {
             imagen: producto.imagenes[0].nombre,
             stock: producto.stock,
             cantidad: 1,
-            subtotal: (+producto.precio - (+producto.precio * +producto.descuento / 100)) * item.cantidad ,
+            subtotal: (+producto.precio - (+producto.precio * +producto.descuento / 100)) * 1,
             //ordenId: orden.id ,
         }
 
         // verificamos que si el carrito esta vacio
-        if(req.session.carrito.length === 0) {
-            
+        if (req.session.carrito.length === 0) {
+
 
             let orden = await db.Ordenes.findOne({
                 where: {
-                    usuariosId : req.session.userLogin.id,
+                    usuariosId: req.session.userLogin.id,
                     status: 'pending'
                 }
             })
 
             // en caso de que el usuario no tenga tenga ninguna orden de compra 'pendiente' asociada 
-            if(!orden) {
+            if (!orden) {
 
                 // creamos un nuevo registro asociado al usuario
                 let newOrden = await db.Ordenes.create({
-                    usuariosId : req.session.userLogin.id,
+                    usuariosId: req.session.userLogin.id,
                     status: 'pending'
                 })
 
@@ -108,6 +121,21 @@ module.exports = {
 
             } else {
                 // en caso de que el usuario tenga una orden de compra asociada y el carrito vacio
+
+                item = {
+                    ...item,
+                    ordenId: orden.id
+                }
+
+                await db.Carritos.create({
+                    usuariosId: req.session.userLogin.id,
+                    productosId: item.id,
+                    ordenesId: orden.id,
+                    cantidad: 1,
+                })
+
+                req.session.carrito.push(item)
+
             }
 
 
@@ -117,10 +145,55 @@ module.exports = {
         } else {
             // en caso de que el usuario tenga productos en su carrito
 
+            let index = productVerify(req.session.carrito, req.params.id);
 
+            let orden = await db.Ordenes.findOne({
+                where: {
+                    usuariosId: req.session.userLogin.id,
+                    status: 'pending'
+                }
+            })
 
+            if (index === -1) {
+                // el producto no esta dentro del carrito
+
+                item = {
+                    ...item,
+                    ordenId: orden.id
+                }
+
+                await db.Carritos.create({
+                    usariosId: req.session.userLogin.id,
+                    productosId: item.id,
+                    ordenesId: orden.id,
+                    cantidad: 1,
+                })
+
+                req.session.carrito.push(item)
+
+            } else {
+                // el producto existe en el carrito
+
+                let producto = req.session.carrito[index]
+
+                producto.cantidad++;
+                producto.subtotal = (+producto.precio - (+producto.precio * +producto.descuento / 100)) * item.cantidad
+
+                req.session.carrito[index] = producto;
+
+                await db.Carritos.update({
+                    cantidad: producto.cantidad
+                },
+                    {
+                        where: {
+                            ordenesId: producto.ordenId,
+                            productosId: producto.id
+                        }
+                    }
+                )
+                
+            }
         }
-
 
 
     },
