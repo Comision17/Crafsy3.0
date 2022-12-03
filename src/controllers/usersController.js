@@ -57,7 +57,7 @@ module.exports = {
                         image: usuario.imagen,
                         rol: usuario.rolId
                     }
-
+                    req.session.carrito = []
                     return res.redirect('/')
                 })
                 .catch(errores => res.send(errores))
@@ -150,7 +150,7 @@ module.exports = {
                                     imagen: item.producto.imagenes[0].nombre,
                                     stock: item.producto.stock,
                                     cantidad: +item.cantidad,
-                                    subtotal: (+item.producto.precio - (+item.producto.precio * +item.producto.descuento / 100)) * item.cantidad ,
+                                    subtotal: ( +item.producto.precio - ( +item.producto.precio * +item.producto.descuento / 100 )) * item.cantidad,
                                     ordenId: orden.id ,
                                 }
                                 req.session.carrito.push(producto)

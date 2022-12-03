@@ -13,8 +13,8 @@
                         <div class="img_producto" style="background-image:url('/images/productos/<%= producto.imagenes[0].nombre%>')"></div>
                         <h3><%= producto.nombre %> </h3>
                         <h4>$<%= producto.precio %> </h4>
-                        <button class="botonRedireccion">añadir al Carrito</button>
                     </a>
+                    <button class="botonRedireccion" onclick="addItem('<%= producto.id %>')">añadir al Carrito</button>
                 </article>
             <% }) %>
         </section>

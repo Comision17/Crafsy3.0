@@ -8,6 +8,10 @@
     font-weight: 700;
     margin: 20px 0;
 }
+.cart section.none {
+    display: none;
+    background-color: transparent;
+}
 .cart section article{
     background-color: var(--Marta);
     width: 100%;
@@ -16,9 +20,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     padding: 5px 0 10px 0;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    min-height: 135px;
 }
 .cart section article .imagenes{
     width: 25%;
